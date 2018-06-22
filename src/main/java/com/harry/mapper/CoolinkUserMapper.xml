@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.harry.mapper.CoolinkUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.harry.entity.CoolinkUser">
+        <id column="user_id" property="userId"/>
+        <id column="user_name" property="userName"/>
+        <id column="user_pwd" property="userPwd"/>
+    </resultMap>
+
+    <select id="getUserForId" resultMap="BaseResultMap" parameterType="CoolinkUser">
+      select coolink.user_id, coolink.user_name, coolink.user_pwd
+      from coolink_user
+      as coolink
+      where coolink.user_name = #{userName};
+    </select>
+
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--设置别名-->
+    <typeAliases>
+        <!--将该包下的所有类类的类名设置为别名-->
+        <package name="com.harry.entity"/>
+    </typeAliases>
+
+</configuration>
