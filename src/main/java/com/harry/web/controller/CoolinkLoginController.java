@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 @Controller
+@RequestMapping("/coolink")
 public class CoolinkLoginController {
 
     @Resource
     private CoolinkLoginServiceImpl service;
 
-    @RequestMapping(value = "/coolink/login.action", method = RequestMethod.POST)
+    @RequestMapping(value = "/login.action", method = RequestMethod.POST)
     @ResponseBody
     public ApiResponse<CoolinkUser> login(@RequestBody CoolinkUser user) {
         CoolinkUser coolinkUser = service.getCoolinkUser(user);

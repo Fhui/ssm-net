@@ -1,6 +1,8 @@
 package com.harry.entity;
 
-public class CoolinkUser {
+import java.io.Serializable;
+
+public class CoolinkUser implements Serializable {
 
     private int userId;
     private String userName;

@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class ItemServiceImpl implements ItemService {
 
+    private final ItemsMapper mapper;
+
     @Autowired
-    private ItemsMapper mapper;
+    public ItemServiceImpl(ItemsMapper mapper) {
+        this.mapper = mapper;
+    }
 
 //    @Autowired
 //    public ItemServiceImpl(ItemsMapper mapper) {
@@ -20,6 +24,22 @@ public class ItemServiceImpl implements ItemService {
 //    }
 
     public List<Items> getAllItems() {
-        return mapper.getItems();
+        return mapper.selectAll();
+    }
+
+    public Items getItemsById(Integer id) {
+        return mapper.select(id);
+    }
+
+    public int updateItem(Items items) {
+        return mapper.update(items);
+    }
+
+    public int insertItem(Items items) {
+        return mapper.insert(items);
+    }
+
+    public int deleteItem(Integer id) {
+        return mapper.delete(id);
     }
 }

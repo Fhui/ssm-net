@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>修改商品信息</title>
+<title>添加商品信息</title>
 
 </head>
 <body> 

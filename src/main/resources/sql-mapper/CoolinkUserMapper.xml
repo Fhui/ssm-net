@@ -8,7 +8,7 @@
         <id column="user_pwd" property="userPwd"/>
     </resultMap>
 
-    <select id="getUserForId" resultMap="BaseResultMap" parameterType="CoolinkUser">
+    <select id="selectOne" resultMap="BaseResultMap" parameterType="CoolinkUser">
       select coolink.user_id, coolink.user_name, coolink.user_pwd
       from coolink_user
       as coolink

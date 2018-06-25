@@ -14,6 +14,6 @@ public class CoolinkLoginServiceImpl implements CoolinkLoginService {
     private CoolinkUserMapper mapper;
 
     public CoolinkUser getCoolinkUser(CoolinkUser user) {
-        return mapper.getUserForId(user);
+        return mapper.selectOne(user);
     }
 }

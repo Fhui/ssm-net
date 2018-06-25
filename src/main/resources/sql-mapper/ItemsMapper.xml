@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.harry.mapper.ItemsMapper">
+
+    <select id="selectAll" resultType="Items">
+        select * from items;
+    </select>
+
+    <select id="select" parameterType="Integer" resultType="Items">
+        select * from
+        items
+        where id = #{id};
+    </select>
+
+    <update id="update" parameterType="Items">
+        update items
+        set
+        items.name  = #{name},
+        items.price = #{price},
+        items.detail = #{detail}
+        where id = #{id};
+    </update>
+
+    <insert id="insert" parameterType="Items">
+        insert into
+        items
+        (name, price, detail, pic, createtime)
+        values
+        (#{name}, #{price}, #{detail}, #{pic}, #{createtime});
+    </insert>
+
+    <delete id="delete" parameterType="Integer">
+        delete from
+         items
+         where
+         items.id = #{id};
+    </delete>
+
+</mapper>

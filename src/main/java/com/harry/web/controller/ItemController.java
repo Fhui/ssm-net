@@ -17,13 +17,12 @@ import java.util.List;
 @Controller
 public class ItemController {
 
-    @Autowired
-    private ItemService itemService;
+    private final ItemService itemService;
 
-//    @Autowired
-//    public ItemController(ItemServiceImpl itemService) {
-//        this.itemService = itemService;
-//    }
+    @Autowired
+    public ItemController(ItemService itemService) {
+        this.itemService = itemService;
+    }
 
     @RequestMapping(value = "/login.action", method = RequestMethod.POST)
     public String login() {
@@ -41,11 +40,34 @@ public class ItemController {
 
     @RequestMapping(value = "/itemEdit.action")
     public ModelAndView editItem(Integer id) {
-        List<Items> list = new ArrayList<Items>();
-        Items item = list.get(id);
+        Items item = itemService.getItemsById(id);
         ModelAndView mav = new ModelAndView();
         mav.addObject("item", item);
         mav.setViewName("/editItem.jsp");
+        return mav;
+    }
+
+    @RequestMapping(value = "/updateItem.action")
+    public ModelAndView updateItem(Items items) {
+        itemService.updateItem(items);
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/success.jsp");
+        return mav;
+    }
+
+    @RequestMapping(value = "/insertItems.action")
+    public ModelAndView insertItem(Items items) {
+        itemService.insertItem(items);
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/insertSuccess.jsp");
+        return mav;
+    }
+
+    @RequestMapping(value = "/deleteItems.action")
+    public ModelAndView deleteItem(Integer id){
+        itemService.deleteItem(id);
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/deleteSuccess.jsp");
         return mav;
     }
 
