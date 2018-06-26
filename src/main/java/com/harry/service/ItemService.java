@@ -1,6 +1,7 @@
 package com.harry.service;
 
 import com.harry.entity.Items;
+import com.harry.entity.User;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface ItemService {
     int insertItem(Items items);
 
     int deleteItem(Integer id);
+
 }

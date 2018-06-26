@@ -1,6 +1,7 @@
 package com.harry.service.impl;
 
 import com.harry.entity.Items;
+import com.harry.entity.User;
 import com.harry.mapper.ItemsMapper;
 import com.harry.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;

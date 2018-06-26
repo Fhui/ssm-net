@@ -2,30 +2,50 @@ package com.harry.entity;
 
 public class Orders {
 
-    private String title;
-    private Integer number;
+    private Integer id;
+    private String name;
+    private Float price;
+    private Integer userId;
 
-    public String getTitle() {
-        return title;
+    public Integer getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getNumber() {
-        return number;
+    public String getName() {
+        return name;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     @Override
     public String toString() {
         return "Orders{" +
-                "title='" + title + '\'' +
-                ", number=" + number +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", userId=" + userId +
                 '}';
     }
 }
